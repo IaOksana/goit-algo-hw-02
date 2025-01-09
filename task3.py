@@ -13,6 +13,9 @@
 from collections import deque
 
 def is_symmetric(expression: str) -> str:
+    if len(expression) <1 :
+        return 'Empty string'
+    
     opening = tuple('({[')
     closing = tuple(')}]')
     match = dict(zip(opening, closing))

@@ -44,10 +44,20 @@ def main() :
 
     bank = Bank()
 
-    for i in range(5):
-        bank.generate_request("request" + str(i))
+    while True:
+        req_num = 5
 
-    bank.process_request()
+        req_num_str = input('enter number of requests to generate (otherwise 5 will be used):')
+        if req_num_str.isdigit()   :
+            req_num = int(req_num_str)
+
+        for i in range(req_num):
+            bank.generate_request("request" + str(i))
+
+        bank.process_request()
+
+        if "N" == (input("Would you like to try again? (Y/N)")).upper():
+            break
 
     # Завдання 2
     # Необхідно розробити функцію, яка приймає рядок як вхідний параметр, додає всі його символи до двосторонньої 
