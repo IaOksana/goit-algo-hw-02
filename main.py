@@ -29,9 +29,8 @@ from task1 import Bank
 from task2 import is_polyndrome
 from task3 import is_symmetric
    
-    
-if __name__=='__main__':
 
+def main() :
     # Завдання 1
     # програмa, яка імітує приймання й обробку заявок: програма має автоматично генерувати нові 
     # заявки (ідентифіковані унікальним номером або іншими даними), додавати їх до черги, а потім послідовно 
@@ -41,6 +40,8 @@ if __name__=='__main__':
     #     Поки користувач не вийде з програми:
     #         Виконати generate_request() для створення нових заявок
     #         Виконати process_request() для обробки заявок
+    print("Task 1 started")
+
     bank = Bank()
 
     for i in range(5):
@@ -54,10 +55,16 @@ if __name__=='__main__':
     # чи є рядок паліндромом. Програма повинна правильно враховувати як рядки з парною, так і з непарною кількістю 
     # символів, а також бути нечутливою до регістру та пробілів.
 
-    if (is_polyndrome(input("Enter any string. I'll check wether it is palindrome or not:"))):
-        print("Yes, it is palindrome")
-    else:
-        print("No, it is not palindrome")
+    print("Task 2 started")
+
+    while True:
+        if (is_polyndrome(input("Enter any string. I'll check wether it is palindrome or not:"))):
+            print("Yes, it is palindrome")
+        else:
+            print("No, it is not palindrome")
+
+        if "N" == (input("Would you like to try again? (Y/N)")).upper():
+            break
 
     # Завдання 3 (необов'язкове завдання)
     # У багатьох мовах програмування ми маємо справу з виразами, виділеними символами-розділювачами, такими як 
@@ -65,5 +72,15 @@ if __name__=='__main__':
     # Напишіть програму, яка читає рядок з послідовністю символів-розділювачів, 
     # наприклад, ( ) { [ ] ( ) ( ) { } } }, і надає відповідне повідомлення, коли розділювачі симетричні, 
     # несиметричні, наприклад ( ( ( ) , або коли розділювачі різних видів стоять у парі, як-от ( }.
-    expression = input("Enter an expression: ")
-    print(f"{expression}: {is_symmetric(expression)}")
+    print("Task 3 started")
+
+    while True:
+            expression = input("Enter an expression: ")
+            print(f"{expression}: {is_symmetric(expression)}")
+            if "N" == (input("Would you like to try again? (Y/N)")).upper():
+                break
+
+
+if __name__=='__main__':
+
+    main()

@@ -42,6 +42,12 @@ class Bank:
 #     Інакше:
 #         Вивести повідомлення, що черга пуста
     def process_request(self):
+        
+        if self.requests.empty():
+            print("queue is empty")
+            return
+
+
         while not self.requests.empty():
             current_request = self.requests.get()
             print(f'client {current_request.name} is processed, {current_request.operations}')
